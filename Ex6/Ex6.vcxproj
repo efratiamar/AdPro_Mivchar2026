@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{abb3709b-9d93-4f07-97ff-14e80bfd2576}</ProjectGuid>
-    <RootNamespace>Lesson5</RootNamespace>
+    <ProjectGuid>{22c74ab3-41cb-49cb-b08b-798db99dfc14}</ProjectGuid>
+    <RootNamespace>Ex6</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,8 +123,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ClientData.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="SampleTxtFile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ClientData.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
