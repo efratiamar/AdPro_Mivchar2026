@@ -8,7 +8,6 @@ Circle::Circle()
 	//radius = 1;
 	//center.setX(0);
 	//center.setY(0);
-
 }
 
 Circle::Circle(float r, float x, float y)
