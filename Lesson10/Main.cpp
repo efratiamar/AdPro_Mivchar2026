@@ -3,6 +3,7 @@ using namespace std;
 
 #include <vector>
 #include <list>
+#include <queue>
 int main()
 { 
 	vector<int> v1; //
@@ -36,6 +37,33 @@ int main()
 		cout << v1[i];
 	}
 
+	vector<int>::iterator it1; //int* p;
+	it1 = v1.begin();
+	cout << *it1; //2
+	it1++;
+	cout << *it1; //3
+
+	for (it1 = v1.begin(); it1 != v1.end(); it1++)
+	{
+		cout << *it1;
+
+	}
+
+	v1.erase()
+
+
+
+	vector<int> v22;
+	v22.push_back(5);
+	//...
+	for (it1 = v22.begin(); it1 != v22.end(); it1++)
+	{
+		cout << *it1;
+
+	}
+
+
+
 
 	list<char> ls1;
 
@@ -49,17 +77,29 @@ int main()
 	
 	ls1.reverse();
 	
-	list<char>::iterator it1; //int* p;
+	list<char>::iterator it2; //char* p;
 
-	it1 = ls1.begin();
-	cout << *it1;
-	it1++;
-	cout << *it1;
+	it2 = ls1.begin();
+	cout << *it2;
+	it2++;
+	cout << *it2;
 
-	for (it1 = ls1.begin(); it1 != ls1.end(); it1++)
+	for (it2 = ls1.begin(); it2 != ls1.end(); it2++)
 	{
-		cout << *it1;
+		cout << *it2;
 	}
 	
+
+	queue<int> q;
+	//queue<int>::iterator it; //error!!
+	q.push(4);
+	cout << q.front();
+	cout << q.back();
+	q.pop();
+	if (q.empty())
+	{
+
+	}
+
 
 }
