@@ -25,6 +25,13 @@ private:
 	void inOrder(Node* current);
 	void postOrder(Node* current);
 	void clear(Node* current);
+	bool isMaxHeap(Node* current);
+	bool isMinHeap(Node* current);
+	bool isEven(Node* current);
+	bool isCond( bool (*func) (T), Node* current);
+
+
+
 
 public:
 	Tree() : root(nullptr) {};
@@ -42,6 +49,11 @@ public:
 	virtual void add(T val) = 0; //new Node() ...
 	virtual void remove(T val) = 0;
 	virtual bool search(const T& val) const = 0;
+
+	bool isHeap() { return isMaxHeap(root) || isMinHeap(root); };
+	bool isEven() { return isEven(root); }
+
+	bool isCond( bool (*func) (T) ) { return isCond(func, root); }
 
 };
 
@@ -92,3 +104,72 @@ void Tree<T>::clear(Node* current)
 		delete current;
 	}
 }
+
+template <class T>
+bool Tree<T>::isMaxHeap(Node* current)
+{
+	if (!current)
+		return true;
+	if (current->left && current->value < current->left->value ||
+		current->right && current->value < current->right->value)
+		return false;
+
+	return isMaxHeap(current->left) && isMaxHeap(current->right);
+}
+
+template <class T>
+bool Tree<T>::isMinHeap(Node* current)
+{
+	if (!current)
+		return true;
+	if (current->left && current->left->value < current->value ||
+		current->right && current->right->value < current->value)
+		return false;
+
+	return isMinHeap(current->left) && isMinHeap(current->right);
+}
+
+template <class T>
+bool Tree<T>::isEven(Node* current)
+{
+	if (!current)
+		return true;
+	if (current->value % 2 == 1)
+		return false;
+	
+	return isEven(current->left) && isEven(current->right);
+
+}
+
+template <class T>
+bool Tree<T>::isCond( bool (*func) (T), Node* current)
+{
+	if (!current)
+		return true;
+	if (!func(current->value))
+		return false;
+
+	return isCond(func, current->left) && isCond(func, current->right);
+
+}
+
+
+class Rational
+{
+public:
+	int mone;
+	int mechane;
+};
+
+class ReverseTree : public Tree<Rational>
+{
+
+public:
+	void process(Rational& val) 
+	{ 
+		int t = val.mone;
+		val.mone = val.mechane;
+		val.mechane = t;
+	}
+	void reverse() { preOrder(); };
+};

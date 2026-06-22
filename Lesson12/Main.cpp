@@ -1,6 +1,6 @@
 #include "Tree.h"
 #include "SearchTree.h"
-#include "Contact.h"
+//#include "Contact.h"
 
 int main()
 {
@@ -18,16 +18,16 @@ int main()
 
 	t1.clear();
 
-	SearchTree<Contact> t2;
+	///SearchTree<Contact> t2;
 
-	Contact c1("efrat", "3562985");
-	Contact c2("david", "554645");
+	//Contact c1("efrat", "3562985");
+	//Contact c2("david", "554645");
 
-	t2.add(c1);
-	t2.add(c2);
+	//t2.add(c1);
+	//t2.add(c2);
 	//...
 
-	bool b1 = t2.search(c1);
+	//bool b1 = t2.search(c1);
 
 	bool b3 = t2.isHeap();
 
